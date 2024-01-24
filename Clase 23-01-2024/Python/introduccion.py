@@ -1,5 +1,5 @@
 #creacion de variables
-variable = "hola mundo"
-variable1 = ""
-variable2 = ""
+numero = 10
+palabra = "ejemplo"
+Condicion = True
 variable3 = ""
