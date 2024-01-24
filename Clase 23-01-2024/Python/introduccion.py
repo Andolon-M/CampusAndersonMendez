@@ -55,3 +55,12 @@ print("***************************************")
 print("|               bienvenido            |")
 print("---------------------------------------")
  """
+ 
+import random
+z = 0
+while z != 50: 
+    z = random.randint(1,50)
+    if z % 2 ==0:
+        print("el contenido de la variable z es",z,"y es PAR")
+    else: 
+        print("el contenido de la variable z es",z,"y no es PAR")
