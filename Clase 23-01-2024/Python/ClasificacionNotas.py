@@ -16,5 +16,7 @@ while salir != 0:
         
     else:
      print ("esa nota no esta en el rango calificable")
+     
+     
         
     salir = int(input("desea continuar en el programa? \n PRESIONE \n 1. PARA NO \n 0 para SI"))
