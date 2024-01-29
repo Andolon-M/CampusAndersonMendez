@@ -20,3 +20,7 @@ while salir != 0:
      
         
     salir = int(input("desea continuar en el programa? \n PRESIONE \n 1. PARA NO \n 0 para SI"))
+    
+    '''
+    hola
+    '''
