@@ -11,7 +11,7 @@ while salir != 0:
         print("la nota ingresada es C")
     elif nota >= 3.0 and nota <= 3.8:  
         print("la nota ingresada es B de BASICA")
-    elif nota >= 3.9 and nota <= 5:  
+    elif nota >= 3.9 and nota<= 5:  
         print("la nota ingresada es A de ACEPTABLE")
         
     else:
