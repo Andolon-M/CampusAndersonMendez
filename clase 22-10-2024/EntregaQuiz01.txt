@@ -1,0 +1,83 @@
+RESPUESTAS:
+
+Pregunta 1: Opcion B 
+Pregunta 2: Opcion A
+pregunta 3: opcion C
+pregunta 4: opcion 
+Pregunta 5: opcion B
+
+----------------------- EJERCICIO PSEINT -----------------------------------------------
+
+lenguaje natural:
+
+       ** iniciar el programa
+       ** mostrar bienevenida 
+       ** mostrar instruccion que indique como salir del programa
+       ** pregutar una edad
+       ** recibir la edad 
+       ** almacenar la edad y sumarla al total de edades
+       ** aumentar el contador de edades ingresadas.
+       ** almacenar la edad en la variable mayor
+       ** reperit el proceso hasta que el usuario ingrese un numero negativo
+       ** si se ingresa un numero negativo preguntar si desea ver la el promedio de las edades o la edad mayor.
+       ** mostrar la variable mayor o promedio edad segun la decision del usuario. 
+
+pseudocodigo:
+
+Algoritmo EjercicioQuiz
+	edadMayor = 0
+	PromedioEdades = 0
+	sumaEdades = 0
+
+	bienvenida(saludar)
+	intrucciones(darInstrucciones)
+	recibirEdades(edadMayor, PromedioEdades, sumaEdades)
+	
+	//seleccionarOpcion(seleccion)
+FinAlgoritmo
+
+Funcion bienvenida(saludar)
+	Escribir '*********************************'
+	Escribir '           Bienvenido            '
+	Escribir '- - - - - - - - - - - - - - - - -'
+FinFuncion
+
+Funcion intrucciones(darInstrucciones)
+	Escribir 'Para salir del programa ingrese un numero negativo'
+FinFuncion
+
+Funcion recibirEdades(edadMayor, PromedioEdad, SumaEdad)
+	contarEdadesIngresadas = 0
+	edadMayor = 0
+	Mientras edad >= 0 Hacer
+		
+		Escribir 'ingrese una edad'
+		leer edad 
+		contarEdadesIngresadas = contarEdadesIngresadas + 1
+		si edad > 0 y edad > edadMayor Entonces
+			edadMayor <- edad 
+		FinSi
+		SumaEdad = SumaEdad + edad
+	FinMientras
+	contarEdades = contarEdades -1
+	Escribir contarEdadesIngresadas, ' ', edadMayor, ' ', SumaEdad
+	
+	Escribir 'Seleccione la opcion que desea'
+	Escribir '1. para ver la edad mayor'
+	Escribir '2. para ver le promedio de edades ingresadas'
+	leer eleccion
+	
+	si eleccion = 1 Entonces
+		Escribir 'la mayor edad ingresada es: ',edadMayor
+		Escribir '**************FIN DEL PROGRAMA****************'
+	FinSi
+	si eleccion = 2 Entonces
+		Escribir 'El promedio de edades es: ',SumaEdad/contarEdadesIngresadas
+		Escribir '**************FIN DEL PROGRAMA****************'
+	FinSi
+	
+	
+FinFuncion
+
+****** Diagrama de flujo y pruebas de funcionamiento adjuntas en la entrega. 
+	 
