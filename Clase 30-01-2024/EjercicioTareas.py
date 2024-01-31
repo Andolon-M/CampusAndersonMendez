@@ -37,25 +37,32 @@ def crearTarea():
             nuevaTarea["Nombre"] = nombre
             nuevaTarea["Prioridad"] = prioridad
             global tareas
-            if not tareas:
-                tareas.append(nuevaTarea)
-            else:
-               for i, tarea in enumerate(tareas):
-                if tarea["Prioridad"] <= nuevaTarea["Prioridad"]:
-                    tareas.insert(i, nuevaTarea)
-                    break
-                else:
-                    tareas.append(nuevaTarea)
+            tareas.append(nuevaTarea) 
         else:
             print("Por favor, ingresa un N��MERO DE PRIORIDAD válido.")
 
 def listarTareas():
     global tareas
+    tareas = sorted(tareas, key=lambda tareas: tareas["Prioridad"], reverse=True)
+    print("\n")
     for tarea in tareas:
-        print(tarea["Nombre"], tarea["Prioridad"])
+        print("Nombre",tarea["Nombre"], "Prioridad",tarea["Prioridad"])
     
-def main():
-    saludar()
+def eliminarTarea():
+    while True:
+        try:
+            nombre =input(" \n Ingrese el nombre de la tarea que desea eliminar, (Para Cancelar Ingrese 0) ")
+            if nombre == "0":
+                break
+            for tarea in tareas:
+                if tarea["Nombre"] == nombre:
+                    tareas.remove(tarea)
+                    print("Tarea",tarea, "elminada correctamente")
+        except ValueError:
+            print("Algo a salido mal, ingresa un nombre vaido para la tarea")
+            pass
+
+def Preguntar_menu():
     while True:
         menu()
         opcion = int(input("Ingrese una opcion: "))
@@ -63,13 +70,14 @@ def main():
             crearTarea()
         elif opcion == 2:
             listarTareas()
-        '''elif opcion == 3:
-            modificar_tarea()
+        elif opcion == 3:
+            print("Lo Siento aun estamos trabajando en esta funcion, PRONTO ESTARA DISPONIBLE")
         elif opcion == 4:
-            eliminar_tarea()
+            eliminarTarea()
         elif opcion == 5:
-            salir()
+            break
         else:
-            print("Opcion no valida")'''
-            
-main()
+            print("Opcion no valida")
+   
+saludar()         
+Preguntar_menu()
