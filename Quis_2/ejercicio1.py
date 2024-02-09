@@ -28,10 +28,23 @@ def añadir(pedidos):
         
     
 def eliminarPlato(pedidos):
-    print("actualmente hay", len(pedidos))
+    print("Actualmente hay", len(pedidos), "platos en el pedido.")
 
-    pedidoEliminar = input("INgree el nombre de pedido que dese eliminar")
-    print("lo siento, HASTA AQUI ALCANCE A TERMINAR")
+    if not pedidos:
+        print("No hay platos en el pedido para eliminar.")
+        return
+
+    pedidoEliminar = input("Ingrese el nombre del plato que desea eliminar: ")
+
+    for pedido in pedidos:
+        if pedidoEliminar in pedido:
+            pedidos.remove(pedido)
+            print(f"El plato '{pedidoEliminar}' ha sido eliminado del pedido.")
+            return
+
+    print(f"El plato '{pedidoEliminar}' no fue encontrado en el pedido.")
+
+
     
 pedidos=[]
 desicion = 0
@@ -43,9 +56,11 @@ while desicion != 4:
            
         elif desicion == 2:
             print("Actualmente se han pedido:\n")
+            contador = 1
             for pedido in pedidos:
-                contador =+ 1
+                
                 print("plato numero:", contador,") ", pedido)
+                contador += 1
                 desicion = 0
     
         elif desicion == 3:
